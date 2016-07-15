@@ -1,0 +1,7 @@
+<h1> Authors </h1>
+<ul>
+<% @authors.each do |a| %> 
+<% if @authors.count == 0 %>
+<li><%= a.first_name %></li>
+<% end %>
+</ul> 
