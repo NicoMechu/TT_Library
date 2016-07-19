@@ -1,7 +1,13 @@
-<h1> Authors </h1>
+<h2> Authors </h2>
+
 <ul>
-<% @authors.each do |a| %> 
-<% if @authors.count == 0 %>
-<li><%= a.first_name %></li>
-<% end %>
+  <% @authors.each do |a| %> 
+
+    <li><%= link_to a.last_name, a %></li>
+    
+  <% end %>
 </ul> 
+
+<% if @authors.count == 0 %>
+    <p>There are no authors to show</p>
+<% end %>

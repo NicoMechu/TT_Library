@@ -1,4 +1,13 @@
-<h1><%= author.name %></h1>
+<h2><%= @author.first_name %> <%= @author.last_name %></h2>
+
 <% @author.books.all.each do |b|%>
-  <p><%=  b.title %><p>
+  <ul>
+
+    <li><%=  link_to b.title, b %></li>
+
+  </ul>
+<% end %>
+
+<% if @author.books.size== 0 %>
+    <p> This author have any books published </p>
 <% end %>
