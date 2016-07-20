@@ -3,11 +3,15 @@ class RequestsController < ApplicationController
 
   def create
     r = Request.new
-    r.user_id = current_user.id
-    r.book_id = params[:book_id]
+    r.user = current_user
     book = Book.find(params[:book_id])
+    r.book = book
     r.status = :pending
-    r.save 
+    if r.save
+      flash[:notice] = "The book \"#{book.title}\" has been succesfuly requested"
+    else
+         flash[:errors] = r.errors.full_messages.join(", ")
+    end
     flash[:notice] = "The book \"#{book.title}\" has been succesfuly requested"
     redirect_to :back
   end

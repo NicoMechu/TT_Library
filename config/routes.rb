@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :requests 
     resources :comments
   end
+  
   resources :authors, only: [:index, :show]
   resources :books, only: [:index, :show] do
     resources :requests 

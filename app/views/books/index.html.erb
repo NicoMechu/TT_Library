@@ -4,7 +4,7 @@
   
     <li><%= link_to b.title, b %>      
       <% if user_signed_in? %>
-        <%=  link_to 'Request', book_requests_path(b.id), method: :post  %>
+        <%=  link_to 'Request', book_requests_path(b), method: :post  %>
       <% end %>
     </li>
     
