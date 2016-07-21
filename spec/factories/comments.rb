@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :comment do
-    user_id 1
-    book_id 1
-    message "MyText"
+    user
+    book
+    message {Faker::Lorem.characters(20)}
   end
 end

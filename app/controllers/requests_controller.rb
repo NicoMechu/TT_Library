@@ -10,9 +10,8 @@ class RequestsController < ApplicationController
     if r.save
       flash[:notice] = "The book \"#{book.title}\" has been succesfuly requested"
     else
-         flash[:errors] = r.errors.full_messages.join(", ")
+      flash[:error] = r.errors.full_messages.join(", ")
     end
-    flash[:notice] = "The book \"#{book.title}\" has been succesfuly requested"
     redirect_to :back
   end
 
