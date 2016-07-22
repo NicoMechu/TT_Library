@@ -1,7 +1,7 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 
-#Authors
+# Authors
 Author.create(first_name: "Edgar Alan", last_name: "Poe" )
 
 Author.create(first_name: "Horacio", last_name: "Quiroga" )
@@ -14,7 +14,7 @@ Author.create(first_name: "J. K.", last_name: "Rowling" )
 
 Author.create(first_name: "Gabriel Garcia", last_name: "Marquez" )
 
-#Books
+# Books
 Book.create(title: "Black cat", description: "Un gato negro que esta raro", year:  1975 , ISBN: "ASDJH1343M35" , author_id:Author.where(last_name: "Poe" ).first.id)
 
 Book.create(title: "Tell tell heart", description: "Un tipo que se taró y mata a otro y despues se hace el gil, pero no le sale", year:  1979 , ISBN: "ASJLNAS5523SA ", author_id: Author.where(last_name: "Poe" ).first.id)
@@ -30,3 +30,6 @@ Book.create(title: "Dead zone", description: "Un tipo se parte la cabeza con el 
 Book.create(title: "Don quijote de la mancha", description: "En un lugar de la mancha donde nadie se acuerda, a un loco se le va la moto y decide salir a darselas de caballero acompañado de un gordito.", year:  1750 , ISBN: "AS123J8SA4C ", author_id:Author.where(last_name: "Cervantes" ).first.id)
 
 Book.create(title: "Cementerio de Animales", description: "Hay un cementerio muy loco donde cuando enterras a un fiambre de repente cobra vida de nuevo, pero se vuelve malo.", year:  2001 , ISBN: "BIU213GHIUS12 ", author_id: Author.where(last_name: "King" ).first.id)
+
+# Administrator
+AdminUser.create!(email: 'admin@admin.com', password: 'password', password_confirmation: 'password')
