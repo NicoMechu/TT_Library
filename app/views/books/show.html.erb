@@ -1,16 +1,17 @@
 <h2><%= @book.title%> </h2>
 <div>
-  <p> Description: <%= @book.description %></p>
-  <p> Year: <%= @book.year %></p>
-  <p> Author: <%= link_to @book.author.first_name, @book.author %></p>
+  <div> Description: <%= @book.description %></div>
+  <div> Year: <%= @book.year %></div>
+  <div> Author: <%= link_to @book.author.first_name, @book.author %></div>
 </div>
 
 <% if user_signed_in? %>
   <%= render 'comments/section'%>
 <% end %>
 
-<p> Comments: </p>
+<% if @comments.size > 0 %>
 
+<div> Comments: </div>
 <ul>
   <% @comments.each do |c| %>
     <li>
@@ -22,6 +23,6 @@
   <% end %>
 </ul>
 
-<% if @comments.size == 0 %>
-  <p> There is no comments for this book yet. </p>
+<% else %>
+  <div> There is no comments for this book yet. </div>
 <% end %>

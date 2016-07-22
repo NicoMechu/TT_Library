@@ -1,6 +1,6 @@
 <%= form_for([@book, @comment]) do |fc| %>
 
-  <p> <%= fc.label :message, "Leave your comment:" %>  </p>
+  <div> <%= fc.label :message, "Leave your comment:" %>  </div>
   <%= fc.select :rate, [['None',0], ['Horrible',1], ['Bad',2], ['Regular',3], ['Good',5], ['Excelent',5] ], :default => :Bad %><br>
   <%= fc.text_area :message %><br>
 
