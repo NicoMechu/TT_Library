@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :request do
-    user_id 1
-    book_id 1
-    status 1
+    user
+    book
+    status {Faker::Number.between(0, 3)}
   end
 end
