@@ -1,4 +1,4 @@
-class Request < ApplicationRecord
+class Request < ActiveRecord::Base
   belongs_to :user
   belongs_to :book
   enum status: [ :canceled , :pending, :accepted, :returned]

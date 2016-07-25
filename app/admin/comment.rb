@@ -14,8 +14,18 @@ ActiveAdmin.register Comment, as: 'Message' do
     end
     
     column :message
+    actions
   end
 
   filter :book
   filter :user
+
+  form do |f|
+    f.imputs "Comment Details" do |f|
+      f.input :book
+      f.input :user
+      f.input :message
+    end
+    f.actions
+  end
 end
