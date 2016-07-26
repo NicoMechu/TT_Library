@@ -34,6 +34,8 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 gem 'rails-controller-testing'
+
+# devise (users) 
 gem 'devise'
 
 # Detects bad lenguage
@@ -45,6 +47,10 @@ gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 gem 'ransack',             github: 'activerecord-hackery/ransack'
 gem 'draper',              '> 3.x'
 gem 'sass-rails',          github: 'rails/sass-rails' # For Sprockets 4
+
+# files management
+gem 'carrierwave'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
