@@ -15,5 +15,9 @@ class User < ActiveRecord::Base
   def to_s
     email
   end
+
+  def has_read?(book)
+    requests.where(status: 'returned', book: book).any?
+  end
   
 end
