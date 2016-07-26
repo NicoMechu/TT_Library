@@ -4,6 +4,7 @@ class BooksController < ApplicationController
     @comments = @book.comments.recents
     if user_signed_in?
       @comment = Comment.new
+      @rateable = current_user.has_read?(@book)
     end
   end
 

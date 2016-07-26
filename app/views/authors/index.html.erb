@@ -3,7 +3,7 @@
 <ul>
   <% @authors.each do |a| %> 
 
-    <li><%= link_to a.last_name, a %></li>
+    <li><%= link_to "#{a.first_name} #{a.last_name}", a %></li>
     
   <% end %>
 </ul> 

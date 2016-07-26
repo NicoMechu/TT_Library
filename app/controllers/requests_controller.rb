@@ -15,4 +15,15 @@ class RequestsController < ApplicationController
     redirect_to :back
   end
 
+  def index
+    @requests = current_user.requests.not_canceled
+  end
+
+  def destroy
+    rec = current_user.requests.find(params[:id])
+    rec.update status: 'canceled'
+    redirect_to :back
+    flash[:notice] = "The request of \"#{rec.book}\" has been canceled"
+  end
+
 end
