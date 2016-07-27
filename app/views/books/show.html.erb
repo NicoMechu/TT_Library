@@ -1,13 +1,16 @@
 <h2><%= @book.title%> </h2>
 <div>
-  <div> Description: <%= @book.description %></div>
-  <div> Year: <%= @book.year %></div>
-  <div> Author: <%= link_to @book.author.first_name, @book.author %></div>
+
+    <%= @book.image? ? ( image_tag @book.image ) : ( image_tag 'no_book.jpg', height: '300', width: '200') %>
+
+  <div>
+    <div> Description: <%= @book.description %></div>
+    <div> Year: <%= @book.year %></div>
+    <div> Author: <%= link_to @book.author.first_name, @book.author %></div>
+  </div>
 </div>
 
-<% if user_signed_in? %>
-  <%= render 'comments/section'%>
-<% end %>
+<%= render 'comments/section' if user_signed_in? %>
 
 <% if @comments.size > 0 %>
 

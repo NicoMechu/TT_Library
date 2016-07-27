@@ -49,7 +49,8 @@ gem 'draper',              '> 3.x'
 gem 'sass-rails',          github: 'rails/sass-rails' # For Sprockets 4
 
 # files management
-gem 'carrierwave'
+gem 'carrierwave', '~> 0.10.0'
+gem "mini_magick", '~> 4.5.1'
 
 
 group :development, :test do
