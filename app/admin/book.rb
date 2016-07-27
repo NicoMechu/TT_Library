@@ -1,15 +1,16 @@
 ActiveAdmin.register Book do
-  permit_params :title, :year, :description, :ISBN, :author_id
+  permit_params :title, :year, :description, :ISBN, :author_id, :image
 
   index do
     selectable_column
     column :title
     column :author do |book|
-      link_to(book.author.last_name, admin_author_path(book.author))
+      link_to(book.author, admin_author_path(book.author))
     end 
     column :year
     column :ISBN
     column :description
+    column :image
     actions
   end
 
@@ -25,6 +26,7 @@ ActiveAdmin.register Book do
     f.input :year
     f.input :ISBN
     f.input :description
+    f.input :image
   end
   f.actions
   end
