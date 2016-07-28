@@ -6,8 +6,4 @@ json.ISBN        @book.ISBN
 json.year        @book.year
 
 
-json.comments   @book.comments do |comment|
-  json.user     comment.user.to_s
-  json.message  comment.message
-  json.rate     comment.rate
-end
+json.comments   @book.comments, partial: 'api/v1/books/comment', as: :comment 
