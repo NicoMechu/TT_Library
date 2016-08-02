@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160801145443) do
+ActiveRecord::Schema.define(version: 20160802165118) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 20160801145443) do
     t.float    "avg",           null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.index ["rater_id", "rateable_id", "rateable_type"], name: "index_average_caches", using: :btree
   end
 
   create_table "books", force: :cascade do |t|
@@ -87,6 +88,7 @@ ActiveRecord::Schema.define(version: 20160801145443) do
     t.float    "overall_avg",   null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.index ["rateable_id", "rateable_type"], name: "index_overall_averages", using: :btree
   end
 
   create_table "rates", force: :cascade do |t|

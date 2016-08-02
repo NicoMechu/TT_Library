@@ -7,10 +7,10 @@
             <%=  link_to r.book.title, r.book %>
           </div>
           <div class = "special"> 
-          <%=  r.status %>
           <% if r.status == 'pending' %> 
             <%= link_to '', [r.user, r], method: :delete , class: 'cancel' %> 
           <% end %>
+          <%=  r.status %>
         </li>
     <% end %>
   </ul>
