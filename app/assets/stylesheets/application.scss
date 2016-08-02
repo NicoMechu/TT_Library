@@ -1,0 +1,187 @@
+body {
+    margin: 0 5%;
+    box-sizing: border-box;
+
+    font-family: Georgia, serif;
+    font-weight: bold;
+    font-stretch: condensed;
+
+    background: #f6f5f6;
+}
+
+header {
+    position: relative;
+
+    height: 70px;
+
+    border-bottom: 1px solid #878787;
+}
+
+main {
+    width: 55%;
+    margin: 0 auto;
+}
+
+
+.submit {
+    float: right;
+    padding: 8px 18px;
+    margin: 0;
+
+    font: 12px/12px Helvetica, serif;
+
+    color: white;
+    border: none;
+    background: black;
+}
+
+.submit:hover {
+    background: #999;
+}
+
+.left {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    float: left;
+    height: 100%;
+    padding-bottom: 5px;
+}
+
+.right {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+    float: right;
+
+    vertical-align: middle;
+}
+
+.right a {
+    display: inline-block;
+    padding: 15px 5px;
+    margin: 0 5px;
+
+    font-size: 12;
+
+    text-decoration: none;
+
+    color: black;
+    border-bottom: 0;
+    border-bottom: 3px none;
+}
+
+.right a:hover {
+    padding-bottom: 12px;
+
+    border-bottom: 3px solid black;
+}
+
+.alert {
+    padding: 10px;
+    margin: 3px;
+
+    background: #e6e6e6;
+}
+
+.alert-error {
+    color: #ba0002;
+    border: 1px solid #e70002;
+}
+
+.alert-notice {
+    color: #018502;
+    border: 1px solid #019402;
+}
+.index_header {
+    color: #333;
+}
+
+.index {
+    padding: 10px;
+
+    font-size: 12px;
+
+    border-top: 1px solid #999;
+    border-bottom: 1px solid #999;
+
+    li {
+        padding: 10px;
+
+        font-size: 12px;
+        list-style-type: none;
+
+        border-top: none;
+        border-bottom: 1px solid #b3b3b3;
+    }
+
+
+
+    li:nth-child(odd) {
+        background-color: #e6e6e6;
+    }
+
+    li:last-child {
+        border: none;
+    }
+
+    a {
+        font: 900 13px  helvetica, serif;
+
+        text-decoration: none;
+
+        color: #333;
+    }
+
+    a:hover {
+        color: #999;
+    }
+    .main_item {
+        display: inline-block;
+    }
+
+    .special {
+        float: right;
+
+        vertical-align: middle;
+
+        color: #008080;
+        a {
+            color: #008080;
+        }
+
+        a:hover {
+            color: #00c4c4;
+        }
+    }
+}
+
+.cancel {
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+
+    background: url(cancel_sprite.png);
+}
+
+.cancel:hover {
+    background-position: 11px , 0;
+}
+
+.no_item {
+    padding: 50px;
+
+    color: #4c4c4c;
+    border: 1px solid #e2cc00;
+    background: #e6e6e6;
+}
+
+.no_item:after {
+    display: inline-block;
+    float: right;
+    padding: 0;
+
+    content: url(sad_face.png);
+}

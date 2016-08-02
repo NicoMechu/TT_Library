@@ -1,31 +1,49 @@
-<h2><%= @book.title%> </h2>
-<div>
 
-    <%= @book.image? ? ( image_tag @book.image ) : ( image_tag 'no_book.jpg', height: '300', width: '200') %>
-
-  <div>
-    <div> Description: <%= @book.description %></div>
-    <div> Year: <%= @book.year %></div>
-    <div> Author: <%= link_to @book.author.first_name, @book.author %></div>
+<div id= "Book">
+  <div id= "image">
+      <%= @book.image? ? ( image_tag @book.image ) : ( image_tag 'no_book.jpg', height: '300', width: '200') %>
   </div>
-</div>
-
-<%= render 'comments/section' if user_signed_in? %>
+  <div id = "intro">
+    <h1><%= @book.title%> </h1>
+    <h2> <%= link_to @book.author, @book.author %></h2>
+    <div id="req"> 
+      <h2> <%= @book.year %> </h2>
+      <% if user_signed_in? %>
+        <%=  link_to 'Request', book_requests_path(@book), method: :post %>
+      <% end %>
+    </div>
+    <div id="desc"> 
+      <%= @book.description %>
+    </div>
+  </div> 
+</div> 
 
 <% if @comments.size > 0 %>
 
-<div> Comments: </div>
-<ul>
-  <% @comments.each do |c| %>
-    <li>
-      <%= c.message %>
-      <% if c.rate > 0 %>
-      Rate: <%= c.rate %>/5
-      <% end %>
-    </li>
-  <% end %>
-</ul>
-
+<div id="comments"> 
+  <h1>Comments</h1>
+  <ul>
+    <% @comments.each do |c| %>
+      <li>
+        <div class = "comment_header">
+          <div style="float:left">
+           <%= "#{c.user}  -  "%>
+          </div>
+          <div style="float:left">
+          <%= rating_for_user @book, c.user, 'book_rate', disable_after_rate: true, readOnly: true %>
+          <end>
+        </div>
+        <div class = "comment_message">
+          <%= c.message %>
+        </div>
+        <hr> 
+      </li>
+    <% end %>
+  </ul>
+</div>
 <% else %>
-  <div> There is no comments for this book yet. </div>
+  <div class = "no_item"> This book don't have any comments yet. </div>
 <% end %>
+
+<%= render 'comments/section' if user_signed_in? %>
+

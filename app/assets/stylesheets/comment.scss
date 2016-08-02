@@ -1,0 +1,27 @@
+.addComment {
+    width: 100%;
+    padding-top: 20px;
+}
+
+.comment {
+    position: relative;
+
+    width: 100%;
+    min-height: 80px;
+    margin: 7px 0;
+
+    resize: none;
+
+    border: 1px solid #cacaca;
+}
+.rate {
+    display: inline-block;
+    float: left;
+}
+
+#left {
+    float: left;
+    padding-bottom: 0;
+
+    line-height: 20px;
+}

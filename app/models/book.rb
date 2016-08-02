@@ -6,7 +6,7 @@ class Book < ActiveRecord::Base
   belongs_to :author
   has_many :comments, dependent: :destroy
   has_many :requests, dependent: :destroy
-
+  ratyrate_rateable "book_rate"
   accepts_nested_attributes_for :comments, :requests
 
   def to_s

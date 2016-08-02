@@ -1,0 +1,102 @@
+.field {
+    position: static;
+
+    width: calc(100% - 60px);
+    padding: 30px;
+
+    border-bottom: 1px solid #999;;
+    label {
+        top: 0;
+
+        float: left;
+        width: 25%;
+        padding: 4px;
+        margin: 0;
+        box-sizing: border-box;
+
+        font: 300 18px helvetica, serif;
+
+        color: #666;
+    }
+
+    input {
+        top: 0;
+
+        float: left;
+        width: 75%;
+        padding: 3px;
+        margin: 0;
+        box-sizing: border-box;
+
+        font: 300 12px/18px helvetica, serif;
+
+        text-decoration: none;
+    }
+
+    input:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0 1000px #e6e6e6 inset;
+    }
+
+    input[type="checkbox"] {
+        width: 30px; /*Desired width*/
+        height: 30px; /*Desired height*/
+        zoom: 1.01;
+    }
+}
+
+.clearfix:before,
+.clearfix:after {
+    display: table;
+
+    content: " ";
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    width: calc(100% - 60px);
+
+    *zoom: 1;
+}
+
+.actions {
+    width: 100%;
+    padding: 10px 0;
+    input {
+        float: right;
+        padding: 8px 18px;
+        margin: 0;
+
+        font: 16px/16px Helvetica, serif;
+
+        color: white;
+        border: none;
+        background: black;
+    }
+    input:hover {
+        background: #999;
+    }
+}
+
+
+.options {
+    a {
+        display: block;
+        width: 30%;
+        padding: 5px;
+
+        text-decoration: none;
+
+        color: #4c4c4c;
+        border: 2px solid #999;
+        background-color: #ccc;
+    }
+
+    a:hover {
+        color: #ccc;
+        border: 2px solid #999;
+        background-color: #4c4c4c;
+    }
+}

@@ -3,13 +3,25 @@
   <head>
     <title>TopTier - Library</title>
     <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'books', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'comment', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'users', media: 'all', 'data-turbolinks-track': 'reload' %>
+
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-    <H1> TopTier - Library </H1>
-    <%= render 'layouts/menu' %>
-    <%= render 'layouts/messages' %>
-    <%= yield %>
+    <header>
+      <div class="left">
+        <H1> The Library </H1>
+      </div>
+      <div class="right">
+        <%= render 'layouts/menu' %>
+      </div>
+    </header>
+      <%= render 'layouts/messages' %>
+    <main>
+      <%= yield %>
+    </main>
   </body>
 </html>
