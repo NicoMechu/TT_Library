@@ -52,6 +52,8 @@ gem 'sass-rails',          github: 'rails/sass-rails' # For Sprockets 4
 gem 'carrierwave', '~> 0.10.0'
 gem "mini_magick", '~> 4.5.1'
 
+# Stars rate
+gem 'ratyrate', :github => 'wazery/ratyrate'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

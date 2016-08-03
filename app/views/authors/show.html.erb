@@ -1,13 +1,15 @@
-<h2><%= @author.first_name %> <%= @author.last_name %></h2>
+<h1 class = "index_header" ><%= @author %></h1>
 
-<% @author.books.all.each do |b|%>
-  <ul>
-
-    <li><%=  link_to b.title, b %></li>
-
-  </ul>
-<% end %>
-
-<% if @author.books.size== 0 %>
-    <div> This author have any books published </div>
+<% if @author.books.size > 0 %>
+<ul class = "index">
+  <% @author.books.all.each do |b|%>
+    <li>
+      <div class = "main_item">
+        <%=  link_to b.title, b %>
+      </div>
+    </li>
+  <% end %>
+</ul>
+<% else %>
+  <div> Sorry! This author have any books published. </div>
 <% end %>

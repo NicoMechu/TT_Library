@@ -1,23 +1,19 @@
-<h2> My Requests</h2>
-
-
+<h1 class = "index_header"> My Requests</h1>
 <% if @requests.size > 0 %>
-
-  <% @requests.each do |r| %>
-    <ul>
-
-      <li>
-        <%=  link_to r.book.title, r.book %>
-        - <%=  r.status %>
-        <% if r.status == 'pending' %> 
-          - <%= link_to 'Cancel Request', [r.user, r], method: :delete %> 
-        <% end %>
-      </li>
-    </ul>
-  <% end %>
-
+  <ul class = "index">
+    <% @requests.each do |r| %>
+        <li>
+          <div class = "main_item"> 
+            <%=  link_to r.book.title, r.book %>
+          </div>
+          <div class = "special"> 
+          <% if r.status == 'pending' %> 
+            <%= link_to '', [r.user, r], method: :delete , class: 'cancel' %> 
+          <% end %>
+          <%=  r.status %>
+        </li>
+    <% end %>
+  </ul>
 <% else %>
-
-    <div> You have no requests yet. </div>
-
+  <div> You have no requests yet. </div>
 <% end %>

@@ -1,3 +1,151 @@
-// Place all the styles related to the books controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+#Book {
+    display: inline-block;
+    width: 100%;
+    padding: 20px 0 20px 0;
+    margin-top: 30px;
+
+    font-family: helvetica, serif;
+
+    border-top: 1px solid #cacaca;
+    border-bottom: 1px solid #cacaca;
+
+
+    #image {
+        display: inline-block;
+        margin-right: 20px;
+    }
+
+    #intro {
+        display: inline-block;
+        width: calc(100% - 225px);
+
+        vertical-align: top;
+
+        h1 {
+            padding: 0;
+            margin: 0;
+
+            font-family: Georgia, serif;
+            font-size: 25px;
+            line-height: 35px;
+
+            color: black;
+        }
+
+        h2 {
+            padding: 0;
+            margin: 0;
+
+            font-family: helvetica, serif;
+            font-size: 18px;
+            font-weight: 100;
+            line-height: 30px;
+
+            color: #ababab;
+        }
+
+        a {
+            text-decoration: none;
+
+            color: #ababab;
+        }
+
+
+        #desc {
+            display: inline-block;
+            width: 100%;
+            padding: 10px 1px;
+
+            font: 100 12px helvetica, serif;
+
+            color: #6d6d6d;
+            border-top: 1px solid #cacaca;
+        }
+
+        #req {
+            display: inline-block;
+            width: 100%;
+            h2 {
+                display: inline-block;
+            }
+
+            a {
+                float: right;
+                width: 65px;
+                margin-bottom: 8px;
+
+                font: bold 16px helvetica, serif;
+
+                color: black;
+                border-bottom: 3px solid black;
+            }
+
+            a:hover {
+                color: #999;
+                border-bottom: 3px solid #999;
+            }
+        }
+    }
+}
+
+
+.comment_header {
+    display: inline-block;
+
+    font: 700 12px helvetica, serif;
+
+    color: #666;
+}
+
+.comment_message {
+    display: block;
+    padding: 5px 0;
+    margin-top: 15px;
+
+    font: 100 11px helvetica, serif;
+
+    color: #6d6d6d;
+}
+
+#comments {
+    position: static;
+
+    display: inline-block;
+    width: 100%;
+    padding: 10px 15px;
+
+    border-bottom: 1px solid #cacaca;
+
+    h1 {
+        margin: 0;
+
+        font: bold 18px/35px Georgia,serif;
+
+        color: black;
+    }
+
+    ul {
+        padding: 0;
+        margin: 0;
+        li {
+            padding: 10px 0 10px 0;
+
+            list-style-type: none;
+
+            hr {
+                float: left;
+                width: 28%;
+                height: 1px;
+                min-width: 160px;
+
+                color: #cacaca;
+                border: none;
+                background-color: #cacaca;
+            }
+        }
+
+        li:last-child hr {
+            display: none;
+        }
+    }
+}

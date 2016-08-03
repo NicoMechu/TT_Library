@@ -1,16 +1,24 @@
-<h2> Books </h2>
-<ul>
-  <% @books.each do |b| %> 
-  
-    <li><%= link_to b.title, b %>      
-      <% if user_signed_in? %>
-        <%=  link_to 'Request', book_requests_path(b), method: :post  %>
-      <% end %>
-    </li>
-    
-  <% end %>
-</ul> 
+<h1 class = "index_header"> Books </h1>
 
-<% if @books.size == 0 %>
-  <div>There are no books to show</div>
+<% if @books.size > 0 %>
+  <ul class = "index">
+    <% @books.each do |b| %> 
+    
+      <li>
+        <div class = "main_item"> 
+          <%= link_to b.title, b %>    
+        </div>  
+
+        <% if user_signed_in? %>
+          <div class = "special" > 
+            <%=  link_to 'Request', book_requests_path(b), method: :post  %>
+          </div>
+        <% end %>
+
+      </li>
+      
+    <% end %>
+  </ul> 
+<% else %>
+  <div class = "no_item" >Sorry! There are no books to show</div>
 <% end %>

@@ -1,14 +1,19 @@
-<%= form_for([@book, @comment]) do |fc| %>
+<div class = "addComment">
+  <%= form_for([@book, @comment]) do |fc| %>
 
-  <div> <%= fc.label :message, "Leave your comment:" %>  </div>
-
-  <% if @rateable %>
-
-  <%= fc.select :rate, [['None',0], ['Horrible',1], ['Bad',2], ['Regular',3], ['Good',5], ['Excelent',5] ], :default => :None %><br>
-
+       <div class = "comment_header" id="left"> <%=  "Add a comment" %>  
+      <% if @rateable %>
+       <label style ="padding: 0 5px"> -   Rate: </label>  
+       </div>
+        <div class = "rate"><%= rating_for @book, 'book_rate', disable_after_rate: false, cancel_place: 'right'%></div>
+      <br>
+      <% else %>
+      </div>
+      <% end %>
+   
+    <div class = "comment_message">
+    <%= fc.text_area :message, class: 'comment', placeholder: "Comment"%><br>
+    <%= fc.submit "Comment", :class => 'submit' %>
+    </div>
   <% end %>
-
-  <%= fc.text_area :message %><br>
-
-  <%= fc.submit %>
-<% end %>
+</div>

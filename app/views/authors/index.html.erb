@@ -1,13 +1,14 @@
-<h2> Authors </h2>
-
-<ul>
-  <% @authors.each do |a| %> 
-
-    <li><%= link_to "#{a.first_name} #{a.last_name}", a %></li>
-    
-  <% end %>
-</ul> 
-
-<% if @authors.count == 0 %>
-    <div>There are no authors to show</div>
+<h1 class = "index_header"> Authors </h1>
+<% if @authors.count > 0 %>
+  <ul class = "index">
+    <% @authors.each do |a| %> 
+      <li>
+        <div class = "main_item"> 
+          <%= link_to "#{a}", a %>
+        </div>  
+      </li>
+    <% end %>
+  </ul> 
+<% else %>
+    <div class="no_item">Sorry! There are no authors to show.</div>
 <% end %>
